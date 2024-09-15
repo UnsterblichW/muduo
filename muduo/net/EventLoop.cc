@@ -143,6 +143,10 @@ void EventLoop::quit()
   {
     wakeup();
   }
+
+  // 疑问：为什么IO线程调用quit()就不必wakeup()呢？
+  // 因为当IO线程可以自己调用到quit()的时候，说明IO线程并没有阻塞在poller_->poll()，也就是正常走完了EventLoop::loop()中的一个while循环
+  // 也就是说IO线程已经调用过doPendingFunctors()
 }
 
 void EventLoop::runInLoop(Functor cb)
