@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
   // testHash();
   EventLoop loop;
   InetAddress listenAddr(2007);
-  int idleSeconds = 10;
+  int idleSeconds = 5;
   if (argc > 1)
   {
     idleSeconds = atoi(argv[1]);

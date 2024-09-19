@@ -11,6 +11,7 @@
 #ifndef MUDUO_NET_TIMERID_H
 #define MUDUO_NET_TIMERID_H
 
+#include <cstdint>
 #include <muduo/base/copyable.h>
 
 namespace muduo
@@ -27,7 +28,7 @@ class TimerId : public muduo::copyable
 {
  public:
   TimerId()
-    : timer_(NULL),
+    : timer_(nullptr),
       sequence_(0)
   {
   }
