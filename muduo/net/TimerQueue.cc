@@ -246,7 +246,7 @@ bool TimerQueue::insert(Timer* timer)
   {
     std::pair<TimerList::iterator, bool> result
       = timers_.insert(Entry(when, timer));
-    assert(result.second); (void)result;
+    assert(result.second); (void)result; //(void)result; 告诉编译器：result 的值已经被读取了，我们有意不再使用它，抑制不必要的警告。
   }
   {
     std::pair<ActiveTimerSet::iterator, bool> result
